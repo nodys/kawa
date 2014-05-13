@@ -1,0 +1,40 @@
+{
+  "name": "nova-testy",
+  "description": "A test tool for client side",
+  "version": "0.0.0",
+  "author": "Jean Ponchon <jean.ponchon@novadiscovery.com>",
+  "repository": {
+    "type": "git",
+    "url": "http://git.novadiscovery.net/tools/testy.git"
+  },
+  "licenses": [
+    {
+      "type": "Copyright Novadiscovery",
+      "url": "http://www.novadiscovery.com/"
+    }
+  ],
+  "main": "lib/testy",
+  "bin": {
+    "testy": "bin/testy.js"
+  },
+  "engines": {
+    "node": ">= 0.10"
+  },
+  "scripts": {
+    "test": "mocha -R spec",
+    "jshint": "./node_modules/.bin/jshint --exclude node_modules"
+  },
+  "dependencies": {
+    "chokidar": "^0.8.2",
+    "ejs": "^1.0.0",
+    "express": "^4.2.0",
+    "mocha": "^1.18.2",
+    "rfile": "^1.0.0",
+    "socket.io": "^1.0.0-pre2"
+  },
+  "devDependencies": {
+    "should": "*",
+    "jshint": "*"
+  },
+  "keywords": []
+}
