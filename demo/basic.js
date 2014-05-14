@@ -4,21 +4,16 @@ var join     = require('path').join
 var chokidar = require('chokidar')
 var basename = require('path').basename
 
-testy.listen(3042);
+testy.server.listen(3042, function() {
+  console.log('Listen on http://localhost:3042/')
+});
 
 function update(path) {
-  // read(join(__dirname, './basic.test.js'))
-  read(path, 'utf-8', function(err, content) {
-    if(err) {
-      console.error('Warning:' + path + ' is unreadable ' + err)
-      return;
-    }
-    testy.add(basename(path), content);
-  })
+  testy.add(path);
 }
 
 function remove(path) {
-  testy.remove(basename(path));
+  testy.remove(path);
 }
 
 var testpath = join(__dirname, './basic.test.js');
@@ -28,6 +23,6 @@ update(testpath)
 
 // Watch and update
 chokidar.watch(testpath)
-  .on('add', update)
+  .on('add',    update)
   .on('change', update)
   .on('unlink', remove)
