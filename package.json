@@ -35,6 +35,7 @@
     "express": "^4.2.0",
     "mocaccino": "^0.6.2",
     "mocha": "^1.18.2",
+    "morgan": "^1.0.1",
     "node-uuid": "^1.4.1",
     "phantom": "^0.6.1",
     "rfile": "^1.0.0",
