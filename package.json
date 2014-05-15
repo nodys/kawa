@@ -25,6 +25,7 @@
     "jshint": "./node_modules/.bin/jshint --exclude node_modules"
   },
   "dependencies": {
+    "async": "^0.8.0",
     "browser-launcher": "^0.3.4",
     "browserify": "^4.1.2",
     "chokidar": "^0.8.2",
@@ -32,8 +33,10 @@
     "ejs": "^1.0.0",
     "event-stream": "^3.1.5",
     "express": "^4.2.0",
+    "mocaccino": "^0.6.2",
     "mocha": "^1.18.2",
     "node-uuid": "^1.4.1",
+    "phantom": "^0.6.1",
     "rfile": "^1.0.0",
     "socket.io": "^1.0.0-pre2",
     "source-map-support": "^0.2.6",

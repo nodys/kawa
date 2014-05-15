@@ -31,7 +31,7 @@ testy.server.listen(3042, function() {
         console.log('Success')
         setTimeout(function() {
           console.log('Send kill signal');
-          ps.kill()
+          ps.kill('SIGINT')
         },3000);
         ps.on('exit', function(code) {
           console.log('EXIT', code);
