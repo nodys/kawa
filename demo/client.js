@@ -1,34 +1,33 @@
 var testy    = require('../lib/testy.js')
-var read     = require('fs').readFile
 var join     = require('path').join
-var chokidar = require('chokidar')
-var basename = require('path').basename
 var watchify = require('watchify')
-var concat   = require('concat-stream')
-var app      = require('express')();
+var express  = require('express')
 var morgan   = require('morgan')
 
-var filepath = join(__dirname,'./client.test.js');
 
-
-// app.use(morgan('dev'))
+var app      = express();
+app.use(morgan('dev'))
 app.get('/service.json', function(req, res) {
   res.json({json:true})
 })
 
-var t = testy()
+var tester = testy()
+  .silent(true)
   .reporter('spec')
   .use(app)
-  .listen(3042, function() {
-    console.log('Listen on http://localhost:3042/')
-  });
-
-
-var b = watchify(filepath);
-function update() {
-  t.add(b.bundle({debug:true}))
-}
-b.on('update', update);
-update();
-
-
+  .usePhantom()
+  // .addScript(join(__dirname,'./vendor.js'))
+  .addScript(
+    watchify(join(__dirname,'./vendor.js')))
+  .addTest(
+    watchify(join(__dirname,'./client.test.js')))
+  .on('start', function(data) {
+    console.log('Start:', data.userAgent);
+  })
+  .on('stdout', function(data) {
+    process.stdout.write(data);
+  })
+  .on('end', function(data) {
+    console.log('End:', data.userAgent);
+  })
+  .listen(3042)
