@@ -10,5 +10,8 @@ describe('A client-server test suite', function() {
         done(err);
       })
   })
+  it('should throw', function() {
+    throw new Error('bug')
+  })
 
 })

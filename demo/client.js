@@ -15,6 +15,7 @@ var tester = testy()
   .silent(true)
   .reporter('spec')
   .use(app)
+  .runOnce()
   .usePhantom()
   // .addScript(join(__dirname,'./vendor.js'))
   .addScript(
@@ -28,6 +29,6 @@ var tester = testy()
     process.stdout.write(data);
   })
   .on('end', function(data) {
-    console.log('End:', data.userAgent);
+    console.log('End: %s [exitCode:%s]', data.userAgent, data.exitCode);
   })
   .listen(3042)
