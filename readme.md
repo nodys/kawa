@@ -1,4 +1,4 @@
-# testy
+# kawa
 
 > A test tool for client side
 
@@ -7,9 +7,9 @@
   - 
 
 ## Getting Started
-Install the module with: `npm install testy`
+Install the module with: `npm install kawa`
 
 ```javascript
-var testy = require('testy');
-testy.awesome(); // "hello "
+var kawa = require('kawa');
+kawa.awesome(); // "hello "
 ```

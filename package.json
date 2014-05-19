@@ -1,11 +1,11 @@
 {
-  "name": "nova-testy",
+  "name": "nova-kawa",
   "description": "A test tool for client side",
   "version": "0.0.0",
   "author": "Jean Ponchon <jean.ponchon@novadiscovery.com>",
   "repository": {
     "type": "git",
-    "url": "http://git.novadiscovery.net/tools/testy.git"
+    "url": "http://git.novadiscovery.net/tools/kawa.git"
   },
   "licenses": [
     {
@@ -13,9 +13,9 @@
       "url": "http://www.novadiscovery.com/"
     }
   ],
-  "main": "lib/testy",
+  "main": "lib/kawa",
   "bin": {
-    "testy": "bin/testy.js"
+    "kawa": "bin/kawa.js"
   },
   "engines": {
     "node": ">= 0.10"
@@ -25,26 +25,24 @@
     "jshint": "./node_modules/.bin/jshint --exclude node_modules"
   },
   "dependencies": {
-    "async": "^0.8.0",
-    "browser-launcher": "^0.3.4",
-    "browserify": "^4.1.2",
-    "chokidar": "^0.8.2",
+    "commander": "^2.2.0",
     "concat-stream": "^1.4.5",
     "ejs": "^1.0.0",
     "event-stream": "^3.1.5",
     "express": "^4.2.0",
-    "mocaccino": "^0.6.2",
-    "mocha": "^1.18.2",
-    "morgan": "^1.0.1",
+    "glob": "^3.2.9",
+    "liftoff": "^0.10.0",
+    "mocha": "^1.19.0",
     "node-uuid": "^1.4.1",
     "phantom": "^0.6.1",
     "rfile": "^1.0.0",
     "socket.io": "^1.0.0-pre2",
     "source-map-support": "^0.2.6",
-    "uuid": "^1.4.1",
-    "watchify": "^0.9.0"
+    "underscore": "^1.6.0",
+    "watchify": ">=0.9.0"
   },
   "devDependencies": {
+    "morgan": "^1.0.1",
     "expect.js": "^0.3.1",
     "jshint": "*",
     "should": "*",

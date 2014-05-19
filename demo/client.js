@@ -1,4 +1,4 @@
-var testy    = require('../lib/testy.js')
+var kawa    = require('../lib/kawa.js')
 var join     = require('path').join
 var watchify = require('watchify')
 var express  = require('express')
@@ -11,13 +11,13 @@ app.get('/service.json', function(req, res) {
   res.json({json:true})
 })
 
-var tester = testy()
+var tester = kawa()
   .silent(true)
   .reporter('spec')
   .use(app)
   .runOnce()
   .usePhantom()
-  // .addScript(join(__dirname,'./vendor.js'))
+  .addScript(join(__dirname,'./vendor.js'))
   .addScript(
     watchify(join(__dirname,'./vendor.js')))
   .addTest(
