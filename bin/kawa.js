@@ -7,6 +7,7 @@ var resolve = require('path').resolve
 var glob    = require('glob')
 var _ = require('underscore')
 var watchify = require('watchify')
+var debug   = require('debug')('kawa')
 
 var Kawa = new Liftoff({
   name: 'kawa',
@@ -37,9 +38,9 @@ function launcher (env) {
     .version(require('../package.json').version)
     .option('-u, --ui <name>','specify the Mocha user-interface (bdd|tdd|exports)')
     .option('-R, --reporter <name>','specify the Mocha reporter to use', 'html')
-    .option('--phantom','enable phantomjs client (require phantomjs to be installed)', false)
-    .option('-w, --watch','watch file for change', false)
+    .option('-P, --phantom','enable phantomjs client (require phantomjs to be installed)', false)
     .option('-p, --port <port>','set test server port', 3042)
+    .option('-w, --watch','watch file for change', false)
     .option('--script <path>','add script file to client', collectValues, [])
     .option('--css <path>','add css file to client', collectValues, [])
     .option('--use <module>','Express application to use')
@@ -65,7 +66,9 @@ function launcher (env) {
   conf.port     = conf.port || program.port;
 
   if(program.args.length) {
-    conf.tests = program.args
+    conf.tests = _.flatten(program.args.map(function(p) {
+      return glob.sync(p);
+    }))
   } else if(conf.tests) {
     conf.tests = _.flatten(conf.tests.map(function(p) {
       return glob.sync(p);
@@ -75,6 +78,11 @@ function launcher (env) {
   }
 
   conf.tests = _.uniq(conf.tests.map(function(p) { return resolve(p) }));
+
+  if(!conf.tests.length) {
+    console.error('No tests found.');
+    process.exit(1);
+  }
 
   var ktest = kawa();
   ktest.ui(conf.ui || 'bdd');
