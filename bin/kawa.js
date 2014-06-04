@@ -64,6 +64,7 @@ function launcher (env) {
   conf.script   = (conf.script || program.script || []).map(function(p) { return resolve(p) });
   conf.css      = (conf.css  || program.css  || []).map(function(p) { return resolve(p) });
   conf.port     = conf.port || program.port;
+  conf.use      = conf.use  || program.use;
 
   if(program.args.length) {
     conf.tests = _.flatten(program.args.map(function(p) {
@@ -91,6 +92,9 @@ function launcher (env) {
   (!conf.watch) && ktest.runOnce();
   conf.script.forEach(ktest.addScript.bind(ktest))
   conf.css.forEach(ktest.addCss.bind(ktest))
+  if(conf.use) {
+    ktest.use(require(resolve(conf.use)))
+  }
 
   // Add tests
   conf.tests.forEach(function(p) {
