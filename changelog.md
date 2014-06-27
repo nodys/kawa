@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.0.4 - Agressive Turtle (2014-06-27) 
+----------------------------------------------------------------------
+
+  - fix: Remove ngapp and fix module path resolution
+  - feat: Add ng-app option
+
+
 v0.0.3 - Tame Horse (2014-06-04) 
 ----------------------------------------------------------------------
 
