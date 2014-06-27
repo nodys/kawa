@@ -44,7 +44,6 @@ function launcher (env) {
     .option('--script <path>','add script file to client', collectValues, [])
     .option('--css <path>','add css file to client', collectValues, [])
     .option('--use <module>','Express application to use')
-    .option('--ngapp <module>','Name of the angular module to use as ng-app')
     .parse(process.argv);
 
 
@@ -66,7 +65,6 @@ function launcher (env) {
   conf.css      = (conf.css  || program.css  || []).map(function(p) { return resolve(p) });
   conf.port     = conf.port || program.port;
   conf.use      = conf.use  || program.use;
-  conf.ngapp    = conf.ngapp  || program.ngapp;
 
   if(program.args.length) {
     conf.tests = _.flatten(program.args.map(function(p) {
@@ -90,7 +88,6 @@ function launcher (env) {
   var ktest = kawa();
   ktest.ui(conf.ui || 'bdd');
   ktest.reporter(conf.reporter || 'html');
-  ktest.ngapp(conf.ngapp);
   conf.phantom && ktest.usePhantom();
   (!conf.watch) && ktest.runOnce();
   conf.script.forEach(ktest.addScript.bind(ktest))
