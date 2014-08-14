@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 
-var Liftoff = require('liftoff');
-var kawa    = require('../lib/kawa');
-var program = require('commander');
-var resolve = require('path').resolve
-var glob    = require('glob')
-var _ = require('underscore')
-var watchify = require('watchify')
-var debug   = require('debug')('kawa')
+var Liftoff    = require('liftoff');
+var kawa       = require('../lib/kawa');
+var program    = require('commander');
+var resolve    = require('path').resolve
+var glob       = require('glob')
+var _          = require('underscore')
+var watchify   = require('watchify')
+var browserify = require('browserify')
+var debug      = require('debug')('kawa')
 
 var Kawa = new Liftoff({
   name: 'kawa',
@@ -98,7 +99,9 @@ function launcher (env) {
 
   // Add tests
   conf.tests.forEach(function(p) {
-    ktest.addTest(p, watchify(p))
+    var b = browserify({ cache: {}, packageCache: {}, fullPaths: true, debug:true });
+    b.add(p);
+    ktest.addTest(p, watchify(b))
   })
 
   // Run test server
