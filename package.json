@@ -41,7 +41,7 @@
     "phantom": "^0.6.1",
     "rfile": "^1.0.0",
     "socket.io": "^1.0.0-pre2",
-    "source-map-support": "^0.2.6",
+    "source-map-support": "git+https://github.com/nopnop/node-source-map-support.git#fixIllegalAccessError",
     "superagent": "^0.18.0",
     "underscore": "^1.6.0",
     "watchify": "^1.0.2"
