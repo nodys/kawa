@@ -1,4 +1,3 @@
-var should = require('should')
 var request = require('superagent')
 var expect = require('expect.js')
 
