@@ -5,9 +5,10 @@ var kawa = require('../lib/kawa')
 var program = require('commander')
 var resolve = require('path').resolve
 var glob = require('glob')
-var _ = require('underscore')
 var watchify = require('watchify')
 var browserify = require('browserify')
+var uniq = require('lodash.uniq')
+var flatten = require('lodash.flatten')
 
 var Kawa = new Liftoff({
   name: 'kawa',
@@ -74,18 +75,18 @@ function launcher (env) {
   conf.use = conf.use || program.use
 
   if (program.args.length) {
-    conf.tests = _.flatten(program.args.map(function (p) {
+    conf.tests = flatten(program.args.map(function (p) {
       return glob.sync(p)
     }))
   } else if (conf.tests) {
-    conf.tests = _.flatten(conf.tests.map(function (p) {
+    conf.tests = flatten(conf.tests.map(function (p) {
       return glob.sync(p)
     }))
   } else {
-    conf.tests = glob.sync('test/*.js')
+    conf.tests = glob.sync('./test/*.js')
   }
 
-  conf.tests = _.uniq(conf.tests.map(function (p) {
+  conf.tests = uniq(conf.tests.map(function (p) {
     return resolve(p)
   }))
 
@@ -97,7 +98,9 @@ function launcher (env) {
   var ktest = kawa()
   ktest.ui(conf.ui || 'bdd')
   ktest.reporter(conf.reporter || 'html')
-  conf.phantom && ktest.usePhantom()
+  if(conf.phantom) {
+    ktest.usePhantom(true)
+  }
   if (!conf.watch) {
     ktest.runOnce()
   }
@@ -108,15 +111,8 @@ function launcher (env) {
   }
 
   // Add tests
-  conf.tests.forEach(function (p) {
-    var b = browserify({
-      cache: {},
-      packageCache: {},
-      fullPaths: true,
-      debug: true
-    })
-    b.add(p)
-    ktest.addTest(p, watchify(b))
+  conf.tests.forEach(function (path) {
+    ktest.addTest(path, ktest.bundler(path))
   })
 
   // Run test server
