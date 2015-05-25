@@ -1,5 +1,5 @@
 {
-  "name": "nova-kawa",
+  "name": "kawa",
   "description": "Test browserify bundle in the browser with ease (based on mocha)",
   "version": "0.2.0",
   "author": "Jean Ponchon <jean.ponchon@novadiscovery.com>",
