@@ -5,7 +5,7 @@
   "author": "Jean Ponchon <jean.ponchon@novadiscovery.com>",
   "repository": {
     "type": "git",
-    "url": "http://git.novadiscovery.net/tools/kawa.git"
+    "url": "https://github.com/nodys/kawa.git"
   },
   "licenses": "MIT",
   "main": "lib/kawa",
