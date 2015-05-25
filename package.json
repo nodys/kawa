@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "browserify": "^10.2.1",
+    "charm": "^1.0.0",
     "commander": "^2.2.0",
     "concat-stream": "^1.4.5",
     "debug": "^2.2.0",
