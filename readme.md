@@ -47,8 +47,8 @@ Kawa works like [mocha](http://mochajs.org/) (and use it under the hood).
     --use <module>         Express application to use
 ```
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
 ---
 
 License: [MIT](./LICENSE)
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
