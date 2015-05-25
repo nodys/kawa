@@ -27,11 +27,11 @@ describe('kawa', function () {
         expect(result.stats.passes).to.eql(1)
       } catch(e) {
         result.tests.forEach(function (test) {
-          if(!test.err.stack) {
+          if (!test.err.stack) {
             return
           }
           e.stack += '\n    From "' + test.fullTitle + '"'
-          e.stack += '\n      '+ test.err.message + '\n' + test.err.stack
+          e.stack += '\n      ' + test.err.message + '\n' + test.err.stack
         })
         return done(e)
       }
@@ -71,7 +71,6 @@ describe('kawa', function () {
       ktest.addTest('fake.js', stream)
       check(ktest, done)
     })
-
 
     it('should accept a mocha test suite as a browserify bundler (id, {Browserify})', function (done) {
       // ktest bundler is an helper function that create a watchify bundler

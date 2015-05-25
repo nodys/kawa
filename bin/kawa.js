@@ -5,8 +5,6 @@ var kawa = require('../lib/kawa')
 var program = require('commander')
 var resolve = require('path').resolve
 var glob = require('glob')
-var watchify = require('watchify')
-var browserify = require('browserify')
 var uniq = require('lodash.uniq')
 var flatten = require('lodash.flatten')
 

@@ -1,18 +1,13 @@
 {
   "name": "nova-kawa",
-  "description": "A test tool for client side",
+  "description": "Test browserify bundle in the browser with ease (based on mocha)",
   "version": "0.2.0",
   "author": "Jean Ponchon <jean.ponchon@novadiscovery.com>",
   "repository": {
     "type": "git",
     "url": "http://git.novadiscovery.net/tools/kawa.git"
   },
-  "licenses": [
-    {
-      "type": "Copyright Novadiscovery",
-      "url": "http://www.novadiscovery.com/"
-    }
-  ],
+  "licenses": "MIT",
   "main": "lib/kawa",
   "bin": {
     "kawa": "bin/kawa.js"
@@ -52,5 +47,14 @@
     "standard": "^3.11.0",
     "expect.js": "^0.3.1"
   },
-  "keywords": []
+  "standard": {
+    "ignore": [
+      "**/lib/vendor/**",
+      "**/test/fixtures/**"
+    ]
+  },
+  "keywords": ["mocha", "browserify", "phantom", "test", "browser"],
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org/"
+  }
 }
