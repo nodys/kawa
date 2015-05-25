@@ -1,6 +1,20 @@
 Changelog
 =========
 
+v0.3.0 - Helpful Dolphin (2015-05-25) 
+----------------------------------------------------------------------
+
+  - refactor: Rename package to kawa
+  - refactor: Stabilization
+  - test: Add travis conf
+  - test: Add some test
+  - doc: Add license
+  - doc: Prepare readme
+  - fix: Browser source map support
+  - feat: Add matrix reporter
+  - feat: Add matrix reporter
+
+
 v0.2.0 - Attractive Chicken (2015-05-20) 
 ----------------------------------------------------------------------
 
