@@ -1,7 +1,7 @@
 {
   "name": "kawa",
   "description": "Test browserify bundle in the browser with ease (based on mocha)",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "Jean Ponchon <jean.ponchon@novadiscovery.com>",
   "repository": {
     "type": "git",
@@ -53,7 +53,13 @@
       "**/test/fixtures/**"
     ]
   },
-  "keywords": ["mocha", "browserify", "phantom", "test", "browser"],
+  "keywords": [
+    "mocha",
+    "browserify",
+    "phantom",
+    "test",
+    "browser"
+  ],
   "publishConfig": {
     "registry": "http://registry.npmjs.org/"
   }
