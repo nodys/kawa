@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Kawa by nodys</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Kawa</h1>
+        <p>Test browserify bundle in the browser with ease (based on mocha)</p>
+
+        <p class="view"><a href="https://github.com/nodys/kawa">View the Project on GitHub <small>nodys/kawa</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/nodys/kawa/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/nodys/kawa/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/nodys/kawa">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="kawa" class="anchor" href="#kawa" aria-hidden="true"><span class="octicon octicon-link"></span></a>kawa</h1>
+
+<p><a href="https://github.com/feross/standard"><img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat" alt="js-standard-style"></a>
+<a href="https://travis-ci.org/nodys/kawa"><img src="https://img.shields.io/travis/nodys/kawa.svg?style=flat" alt="travis"></a>
+<a href="https://npmjs.org/package/kawa"><img src="https://img.shields.io/npm/v/kawa.svg?style=flat" alt="npm"></a>
+<a href="https://npmjs.org/package/nodys"><img src="https://img.shields.io/npm/dm/nodys.svg?style=flat" alt="downloads"></a></p>
+
+<p>Test browserify bundle in the browser with ease (based on mocha)</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Bundle your tests with <a href="http://browserify.org/">browserify</a>, then run them in many browsers</li>
+<li>A command line that works like <a href="http://mochajs.org/">mocha</a>
+</li>
+<li>An API that expose usefull informations about the results in the various browsers used to run test</li>
+<li>Run tests in many browsers at the same time and support natively phantomjs for headless testing</li>
+<li>Display test results in the terminal or in the browsers</li>
+</ul>
+
+<h2>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>Install the module locally with <code>npm install kawa --save-dev</code> and/or globally with <code>npm install kawa -g</code>
+Kawa works like <a href="http://mochajs.org/">mocha</a> (and use it under the hood).</p>
+
+<div class="highlight highlight-bash"><pre><span class="pl-k">&gt;</span> kawa --help
+
+  Usage: kawa [options]
+
+  Options:
+
+    -h, --help             output usage information
+    -V, --version          output the version number
+    -u, --ui <span class="pl-k">&lt;</span>name<span class="pl-k">&gt;</span>        specify the Mocha user-interface (bdd<span class="pl-k">|</span>tdd<span class="pl-k">|</span>exports)
+    -R, --reporter <span class="pl-k">&lt;</span>name<span class="pl-k">&gt;</span>  specify the Mocha reporter to use
+    -P, --phantom          <span class="pl-c1">enable</span> phantomjs client (require phantomjs to be installed)
+    -p, --port <span class="pl-k">&lt;</span>port<span class="pl-k">&gt;</span>      <span class="pl-c1">set</span> <span class="pl-c1">test</span> server port
+    -w, --watch            watch file <span class="pl-k">for</span> <span class="pl-smi">change</span>
+    --require <span class="pl-k">&lt;</span>module<span class="pl-k">&gt;</span>     path to a module to preload before running kawa
+    --script <span class="pl-k">&lt;</span>path<span class="pl-k">&gt;</span>        add script file to client
+    --css <span class="pl-k">&lt;</span>path<span class="pl-k">&gt;</span>           add css file to client
+    --use <span class="pl-k">&lt;</span>module<span class="pl-k">&gt;</span>         Express application to use</pre></div>
+
+<hr>
+
+<p>License: <a href="./LICENSE">MIT</a></p>
+
+<p><a href="https://github.com/feross/standard"><img src="https://cdn.rawgit.com/feross/standard/master/badge.svg" alt="js-standard-style"></a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/nodys">nodys</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
