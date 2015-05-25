@@ -1,4 +1,5 @@
 # kawa
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 Test browserify bundle in the browser with ease (based on mocha)
 
@@ -13,7 +14,7 @@ Test browserify bundle in the browser with ease (based on mocha)
 ## Getting Started
 
 Install the module locally with `npm install kawa --save-dev` and/or globally with `npm install kawa -g`
-Kawa works like [mocha](http://mochajs.org/) (and use it under the hood),
+Kawa works like [mocha](http://mochajs.org/) (and use it under the hood).
 
 
 ```bash

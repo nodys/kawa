@@ -98,7 +98,7 @@ function launcher (env) {
   var ktest = kawa()
   ktest.ui(conf.ui || 'bdd')
   ktest.reporter(conf.reporter || 'html')
-  if(conf.phantom) {
+  if (conf.phantom) {
     ktest.usePhantom(true)
   }
   if (!conf.watch) {
@@ -117,5 +117,11 @@ function launcher (env) {
 
   // Run test server
   ktest.listen(conf.port)
+
+  if (!conf.watch) {
+    ktest.on('end', function () {
+      process.exit(0)
+    })
+  }
 
 }
