@@ -1,6 +1,17 @@
 # kawa
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
+[![travis][travis-image]][travis-url]
+[![npm][npm-image]][npm-url]
+[![downloads][downloads-image]][downloads-url]
+
+[travis-image]: https://img.shields.io/travis/nodys/kawa.svg?style=flat
+[travis-url]: https://travis-ci.org/nodys/kawa
+[npm-image]: https://img.shields.io/npm/v/kawa.svg?style=flat
+[npm-url]: https://npmjs.org/package/kawa
+[downloads-image]: https://img.shields.io/npm/dm/nodys.svg?style=flat
+[downloads-url]: https://npmjs.org/package/nodys
+
 Test browserify bundle in the browser with ease (based on mocha)
 
 ## Features
@@ -36,3 +47,9 @@ Kawa works like [mocha](http://mochajs.org/) (and use it under the hood).
     --css <path>           add css file to client
     --use <module>         Express application to use
 ```
+
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
+---
+
+License: [MIT](./LICENSE)
