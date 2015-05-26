@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.4.0 - Rough Kangaroo (2015-05-26) 
+----------------------------------------------------------------------
+
+  - refactor: Introduce mocha.setup options
+  - feat: Add options to set transforms and plugins on browserify bundle
+
+
 v0.3.1 - Zealous Monkey (2015-05-25) 
 ----------------------------------------------------------------------
 
