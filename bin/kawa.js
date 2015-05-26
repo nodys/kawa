@@ -37,7 +37,9 @@ program
   .option('--require <module>', 'path to a module to preload before running kawa', collectValues, [])
   .option('--script <path>', 'add script file to client', collectValues, [])
   .option('--css <path>', 'add css file to client', collectValues, [])
-  .option('--use <module>', 'Express application to use')
+  .option('--use <module>', 'Express application or router to extend default server')
+  .option('-t, --transform <module>', 'Add a transform module to the default browserify bundler', collectValues, [])
+  .option('--plugin <module>', 'Add a plugin module to the default browserify bundler', collectValues, [])
   .parse(process.argv)
 
 Kawa.launch({
@@ -71,6 +73,10 @@ function launcher (env) {
   })
   conf.port = conf.port || program.port
   conf.use = conf.use || program.use
+
+  conf.transform = (conf.transform || program.transform || [])
+
+  conf.plugin = (conf.plugin || program.plugin || [])
 
   if (program.args.length) {
     conf.tests = flatten(program.args.map(function (p) {
@@ -107,6 +113,9 @@ function launcher (env) {
   if (conf.use) {
     ktest.use(require(resolve(conf.use)))
   }
+
+  conf.transform.forEach(ktest.transform.bind(ktest))
+  conf.plugin.forEach(ktest.plugin.bind(ktest))
 
   // Add tests
   conf.tests.forEach(function (path) {
