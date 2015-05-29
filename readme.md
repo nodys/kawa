@@ -4,12 +4,12 @@
 [![npm][npm-image]][npm-url]
 [![downloads][downloads-image]][downloads-url]
 
-[travis-image]: https://img.shields.io/travis/nodys/kawa.svg?style=flat
+[travis-image]: https://img.shields.io/travis/nodys/kawa.svg?style=flat&branch=master
 [travis-url]: https://travis-ci.org/nodys/kawa
 [npm-image]: https://img.shields.io/npm/v/kawa.svg?style=flat
 [npm-url]: https://npmjs.org/package/kawa
-[downloads-image]: https://img.shields.io/npm/dm/nodys.svg?style=flat
-[downloads-url]: https://npmjs.org/package/nodys
+[downloads-image]: https://img.shields.io/npm/dm/kawa.svg?style=flat
+[downloads-url]: https://npmjs.org/package/kawa
 
 Test browserify bundle in the browser with ease (based on mocha)
 
