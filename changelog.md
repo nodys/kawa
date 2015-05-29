@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.4.2 - Candid Cow (2015-05-29) 
+----------------------------------------------------------------------
+
+  - doc: Fix badges
+  - fix: Draw matrix interface at least once
+  - fix: Wrong color used for the matrix reporter
+
+
 v0.4.1 - Rough Puppy (2015-05-26) 
 ----------------------------------------------------------------------
 
