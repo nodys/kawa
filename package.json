@@ -1,7 +1,7 @@
 {
   "name": "kawa",
   "description": "Test browserify bundle in the browser with ease (based on mocha)",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": "Jean Ponchon <jean.ponchon@novadiscovery.com>",
   "repository": {
     "type": "git",
