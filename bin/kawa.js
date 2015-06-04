@@ -78,6 +78,11 @@ function launcher (env) {
 
   conf.plugin = (conf.plugin || program.plugin || [])
 
+  // Conf matrix imply watch
+  if (conf.reporter === 'matrix') {
+    conf.watch = true
+  }
+
   if (program.args.length) {
     conf.tests = flatten(program.args.map(function (p) {
       return glob.sync(p)
