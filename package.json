@@ -7,7 +7,7 @@
     "type": "git",
     "url": "https://github.com/nodys/kawa.git"
   },
-  "licenses": "MIT",
+  "license": "MIT",
   "main": "lib/kawa",
   "bin": {
     "kawa": "bin/kawa.js"
