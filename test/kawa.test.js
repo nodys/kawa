@@ -87,6 +87,22 @@ describe('kawa', function () {
       check(ktest, done)
     })
 
+    it('should not start when only assets are added (must wait for test asset)', function (done) {
+      var ended = false
+      var stylePath = resolve(__dirname, './fixtures/assets/style.css')
+      ktest.addCss(stylePath)
+      ktest.on('end', function (_) {
+        ended = true
+      })
+      setTimeout(function () {
+        if (ended) {
+          done(new Error('Test has been executed'))
+        } else {
+          done()
+        }
+      }, 100)
+    })
+
   })
 
   describe('.addScript(filepathOrId, [mixed])', function () {
@@ -148,5 +164,6 @@ describe('kawa', function () {
     })
 
   })
+
 
 })
