@@ -103,6 +103,16 @@ describe('kawa', function () {
       }, 100)
     })
 
+    it.only('should support .only', function (done) {
+      ktest.addTest(resolve(__dirname, './fixtures/only.test.js'))
+      check(ktest, done) // One test passes
+    })
+
+    it.only('should support .skip', function (done) {
+      ktest.addTest(resolve(__dirname, './fixtures/skip.test.js'))
+      check(ktest, done) // One test passes
+    })
+
   })
 
   describe('.addScript(filepathOrId, [mixed])', function () {
