@@ -8,6 +8,9 @@ var createReadStream = require('fs').createReadStream
 describe('kawa', function () {
   var ktest, result
 
+  // Depend on available phantomjs speed..
+  this.timeout(5000)
+
   beforeEach(function () {
     result = null
     ktest = kawa()
