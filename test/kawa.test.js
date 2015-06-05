@@ -31,10 +31,11 @@ describe('kawa', function () {
       } catch(e) {
         result.tests.forEach(function (test) {
           if (!test.err.stack) {
-            return
+            e.stack = ''
           }
           e.stack += '\n    From "' + test.fullTitle + '"'
           e.stack += '\n      ' + test.err.message + '\n' + test.err.stack
+          e.stack += '\n      ' + JSON.stringify(result.stats)
         })
         return done(e)
       }
@@ -103,12 +104,12 @@ describe('kawa', function () {
       }, 100)
     })
 
-    it.only('should support .only', function (done) {
+    it('should support .only', function (done) {
       ktest.addTest(resolve(__dirname, './fixtures/only.test.js'))
       check(ktest, done) // One test passes
     })
 
-    it.only('should support .skip', function (done) {
+    it('should support .skip', function (done) {
       ktest.addTest(resolve(__dirname, './fixtures/skip.test.js'))
       check(ktest, done) // One test passes
     })
@@ -174,6 +175,5 @@ describe('kawa', function () {
     })
 
   })
-
 
 })
