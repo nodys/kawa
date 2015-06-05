@@ -1,6 +1,19 @@
 Changelog
 =========
 
+v0.4.4 - Slow Camel (2015-06-05) 
+----------------------------------------------------------------------
+
+  - fix: Typo license field
+  - fix: Prevent test running before any test provided
+  - fix: Matrix reporter imply watch = true
+  - test: Fix travis config
+  - test: Add test results to trace
+  - test: Tests for only() and skip()
+  - test: Upper timeout for test (phantom may need more time)
+  - feat: Proxy console.log messages but keep them in the browser console
+
+
 v0.4.3 - Sharp Bee (2015-06-02) 
 ----------------------------------------------------------------------
 
