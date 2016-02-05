@@ -1,20 +1,22 @@
+sudo: false
+
 before_install:
   - mkdir travis-phantomjs
   - wget https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 -O $PWD/travis-phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2
   - tar -xvf $PWD/travis-phantomjs/phantomjs-2.1.1-linux-x86_64.tar.bz2 -C $PWD/travis-phantomjs
   - export PATH=$PWD/travis-phantomjs/phantomjs-2.1.1-linux-x86_64/bin:$PATH
+
 language: node_js
 node_js:
   - "4"
   - "5"
-compiler: clang-3.6
+
+# Add build chain config for Node GYP in Node 4.x
 env:
-  - CXX=clang-3.6
+  - CXX=g++-4.8
 addons:
   apt:
     sources:
-      - llvm-toolchain-precise-3.6
       - ubuntu-toolchain-r-test
     packages:
-      - clang-3.6
       - g++-4.8
