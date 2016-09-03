@@ -24,6 +24,10 @@ describe('kawa', function () {
     ktest.listen()
   })
 
+  afterEach(function () {
+    ktest.exit()
+  })
+
   function check (ktest, done) {
     ktest.on('end', function (_) {
       try {

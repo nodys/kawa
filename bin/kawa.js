@@ -132,7 +132,7 @@ function launcher (env) {
 
   if (!conf.watch) {
     ktest.on('end', function () {
-      process.exit(0)
+      ktest.exit()
     })
   }
 }
