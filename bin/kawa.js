@@ -135,5 +135,4 @@ function launcher (env) {
       process.exit(0)
     })
   }
-
 }

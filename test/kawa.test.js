@@ -25,10 +25,10 @@ describe('kawa', function () {
   })
 
   function check (ktest, done) {
-    ktest.on('end', function (err) {
+    ktest.on('end', function (_) {
       try {
         expect(result.stats.passes).to.eql(1)
-      } catch(e) {
+      } catch (e) {
         result.tests.forEach(function (test) {
           if (!test.err.stack) {
             e.stack = ''
@@ -54,7 +54,7 @@ describe('kawa', function () {
         expect(result.stats.tests).to.eql(1)
         expect(result.stats.failures).to.eql(0)
         expect(result.userAgent).to.match(/PhantomJS/i)
-      } catch(e) {
+      } catch (e) {
         return done(e)
       }
       done()
@@ -113,7 +113,6 @@ describe('kawa', function () {
       ktest.addTest(resolve(__dirname, './fixtures/skip.test.js'))
       check(ktest, done) // One test passes
     })
-
   })
 
   describe('.addScript(filepathOrId, [mixed])', function () {
@@ -147,7 +146,6 @@ describe('kawa', function () {
       ktest.addTest(testPath)
       check(ktest, done)
     })
-
   })
 
   describe('.addCss(filepathOrId, [mixed])', function () {
@@ -173,7 +171,5 @@ describe('kawa', function () {
       ktest.addTest(ktest.bundler(testPath))
       check(ktest, done)
     })
-
   })
-
 })
