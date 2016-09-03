@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v2.0.0 - Maternal Frog (2016-09-03) 
+----------------------------------------------------------------------
+
+  - test: Use phantom package config to ... fix travis
+  - test: Fix travis config - drop v0.12
+  - fix: Add phantomjs 2 for travis
+
+
 v1.0.0 - Sassy Dolphin (2016-02-05) 
 ----------------------------------------------------------------------
 
