@@ -152,7 +152,7 @@ describe('kawa', function () {
     })
   })
 
-  describe.skip('.addCss(filepathOrId, [mixed])', function () {
+  describe('.addCss(filepathOrId, [mixed])', function () {
     var testPath = resolve(__dirname, './fixtures/usestyle.test.js')
     var stylePath = resolve(__dirname, './fixtures/assets/style.css')
 
