@@ -160,20 +160,20 @@ describe('kawa', function () {
       var source = readFileSync(stylePath, 'utf8')
       ktest.addCss('style.css', source)
       ktest.addTest(ktest.bundler(testPath))
-      check(ktest, done)
+      setTimeout(function () { check(ktest, done) }, 500)
     })
 
     it('should include a stylesheet to the test environnement from a stream  (id, {ReadableStream})', function (done) {
       var stream = createReadStream(stylePath)
       ktest.addCss('style.css', stream)
       ktest.addTest(ktest.bundler(testPath))
-      check(ktest, done)
+      setTimeout(function () { check(ktest, done) }, 500)
     })
 
     it('should include a stylesheet to the test environnement from a filepath (filepath)', function (done) {
       ktest.addCss(stylePath)
       ktest.addTest(ktest.bundler(testPath))
-      check(ktest, done)
+      setTimeout(function () { check(ktest, done) }, 500)
     })
   })
 })
