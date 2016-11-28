@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v2.0.2 - Serene Cat (2016-11-28) 
+----------------------------------------------------------------------
+
+  - test: Skip some test - need more exploration on travis + phantomjs
+  - test: Remove stylesheet computed style tests - wont work on travis ?
+  - test: Try a simpler travis config
+  - test: Travis test may need more time in order to check computed styles
+
+
 v2.0.1 - Soft Elephant (2016-09-03) 
 ----------------------------------------------------------------------
 
